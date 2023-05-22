@@ -51,7 +51,6 @@ return require('packer').startup(function(use)
     { 'nvim-lua/plenary.nvim' } } }
 
   use('neovim/nvim-lspconfig')
-  use('jose-elias-alvarez/null-ls.nvim')
   use { 'MunifTanjim/prettier.nvim', requires = { { 'jose-elias-alvarez/null-ls.nvim' }, { 'VonHeikemen/lsp-zero.nvim' } } }
 
   -- use({
@@ -77,6 +76,7 @@ return require('packer').startup(function(use)
   -- use('neoclide/coc.nvim', {branch = 'release'})
 
   use 'preservim/nerdtree'
+  use { 'Xuyuanp/nerdtree-git-plugin', requires = { 'preservim/nerdtree' } }
 
   use { 'junegunn/fzf', run = ":call fzf#install()" }
   use { 'junegunn/fzf.vim' }
@@ -113,7 +113,10 @@ return require('packer').startup(function(use)
   }
   use 'edkolev/tmuxline.vim'
 
-
+  -- **Set VimDevIcons to load after these plugins!**
+  -- NERDTree [1] | vim-airline [2] | CtrlP [3] | powerline [4] | Denite [5] | unite
+  -- [6] | lightline.vim [7] | vim-startify [8] | vimfiler [9] | flagship [11]
+  use 'ryanoasis/vim-devicons'
 
 
 
