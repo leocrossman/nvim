@@ -144,9 +144,9 @@ set expandtab
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-if has("termguicolors")
-  set termguicolors
-endif
+"if has("termguicolors")
+"  set termguicolors
+"endif
 
 set exrc " `vim .` -> sources any .vimrc in the dir -> custom executions for various projects. building/running linting/etc
 "set guicursor=

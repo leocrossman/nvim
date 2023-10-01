@@ -64,7 +64,7 @@ return require('packer').startup(function(use)
   use { "ellisonleao/gruvbox.nvim" }
 
 
-  use 'theprimeagen/harpoon'
+  -- use 'theprimeagen/harpoon'
 
   use 'mbbill/undotree'
 
@@ -75,8 +75,11 @@ return require('packer').startup(function(use)
   -- LSP > CoC
   -- use('neoclide/coc.nvim', {branch = 'release'})
 
-  use 'preservim/nerdtree'
-  use { 'Xuyuanp/nerdtree-git-plugin', requires = { 'preservim/nerdtree' } }
+  -- from vim
+  -- use 'preservim/nerdtree'
+  -- use { 'Xuyuanp/nerdtree-git-plugin', requires = { 'preservim/nerdtree' } }
+  -- nvim alternative:
+  use { 'nvim-tree/nvim-tree.lua' }
 
   use { 'junegunn/fzf', run = ":call fzf#install()" }
   use { 'junegunn/fzf.vim' }
@@ -106,6 +109,13 @@ return require('packer').startup(function(use)
   use 'simrat39/rust-tools.nvim' -- also 'neovim/nvim-lspconfig'
   use 'mfussenegger/nvim-dap'    -- debugging - also plenary.nvim
 
+  -- **Set VimDevIcons to load after these plugins!**
+  -- NERDTree [1] | vim-airline [2] | CtrlP [3] | powerline [4] | Denite [5] | unite
+  -- [6] | lightline.vim [7] | vim-startify [8] | vimfiler [9] | flagship [11]
+  -- use 'ryanoasis/vim-devicons'
+  use 'nvim-tree/nvim-web-devicons'
+
+
   -- Vim + Tmux status bars
   use {
     'nvim-lualine/lualine.nvim',
@@ -113,10 +123,16 @@ return require('packer').startup(function(use)
   }
   use 'edkolev/tmuxline.vim'
 
-  -- **Set VimDevIcons to load after these plugins!**
-  -- NERDTree [1] | vim-airline [2] | CtrlP [3] | powerline [4] | Denite [5] | unite
-  -- [6] | lightline.vim [7] | vim-startify [8] | vimfiler [9] | flagship [11]
-  use 'ryanoasis/vim-devicons'
+
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  })
 
 
 
