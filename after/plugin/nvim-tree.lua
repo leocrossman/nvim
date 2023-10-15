@@ -19,8 +19,6 @@ local function my_on_attach(bufnr)
   vim.keymap.set('n', '<leader>t', api.tree.change_root_to_parent, opts('Up'))
   vim.keymap.set('n', '<leader>r', api.tree.change_root_to_node, opts('CD'))
   vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
-  vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>')
-  vim.keymap.set('n', '<C-n>', ':NvimTreeFocus<CR>')
 end
 
 require("nvim-tree").setup({
@@ -36,3 +34,6 @@ require("nvim-tree").setup({
   },
   on_attach = my_on_attach,
 })
+
+vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>')
+vim.keymap.set('n', '<C-n>', ':NvimTreeFocus<CR>')
