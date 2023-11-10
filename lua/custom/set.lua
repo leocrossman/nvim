@@ -72,10 +72,10 @@ endif
 
 
 if has ('autocmd')
-  augroup zshrc
-    autocmd!
-    autocmd bufwritepost .zshrc execute ":!source .zshrc" | redraw!
-  augroup END
+"  augroup zshrc
+"    autocmd!
+"    autocmd bufwritepost .zshrc execute ":!source .zshrc" | redraw!
+"  augroup END
 
   augroup tmuxconf
     autocmd!
